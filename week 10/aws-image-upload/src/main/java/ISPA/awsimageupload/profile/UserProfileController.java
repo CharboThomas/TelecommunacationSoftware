@@ -4,16 +4,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 import java.util.UUID;
 
-
 @RestController
 @RequestMapping("api/v1/user-profile")
 @CrossOrigin("*")
-
 public class UserProfileController {
 
     private final UserProfileService userProfileService;
@@ -44,5 +41,4 @@ public class UserProfileController {
     public byte[] downloadUserProfileImage(@PathVariable("userProfileId") UUID userProfileId){
         return userProfileService.downloadUserProfileImage(userProfileId);
     }
-
 }

@@ -1,20 +1,17 @@
 package ISPA.awsimageupload.profile;
 
-
 import ISPA.awsimageupload.bucket.BucketName;
 import ISPA.awsimageupload.filestore.FileStore;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-
 import java.io.IOException;
 import java.util.*;
 
 @Service
-
-
 public class UserProfileService {
+
 
     private final UserProfileDataAccessService userProfileDataAccessService;
     private final FileStore fileStore;
@@ -62,7 +59,7 @@ public class UserProfileService {
         String fileName = String.format("%s-%s", file.getOriginalFilename(), UUID.randomUUID());
 
         try {
-            fileStore.save(path,fileName,Optional.of(metadata),file.getInputStream());
+            fileStore.save(path,fileName, Optional.of(metadata),file.getInputStream());
             user.setUserProfileImageLink(fileName);
         } catch (IOException e) {
             throw new IllegalStateException(e);

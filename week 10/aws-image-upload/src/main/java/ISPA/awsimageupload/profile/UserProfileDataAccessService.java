@@ -1,7 +1,5 @@
 package ISPA.awsimageupload.profile;
 
-
-
 import ISPA.awsimageupload.datastore.FakeUserProfileDataStore;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -21,5 +19,4 @@ public class UserProfileDataAccessService {
     List<UserProfile> getUserProfiles(){
         return fakeUserProfileDataStore.getUserProfiles();
     }
-
 }
